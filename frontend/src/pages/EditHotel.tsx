@@ -4,7 +4,6 @@ import * as apiClient from "../api-client";
 import ManageHotelForm from "../forms/ManageHotelForm/ManageHotelForm";
 import { useAppContext } from "../contexts/AppContext";
 
-
 const EditHotel = () => {
   const { hotelId } = useParams();
   const { showToast } = useAppContext();
@@ -17,7 +16,7 @@ const EditHotel = () => {
     }
   );
 
-  const { mutate, isLoading } = useMutation(apiClient.updateMyHotelById, {
+  const { mutateAsync, isLoading } = useMutation(apiClient.updateMyHotelById, {
     onSuccess: () => {
       showToast({ message: "Hotel Saved!", type: "SUCCESS" });
     },
@@ -26,8 +25,14 @@ const EditHotel = () => {
     },
   });
 
-  const handleSave = (hotelFormData: FormData) => {
-    mutate(hotelFormData);
+  const handleSave = async (hotelFormData: FormData) => {
+    try {
+      
+      const result = await mutateAsync(hotelFormData);
+      return result; 
+    } catch (error) {
+      throw error; 
+    }
   };
 
   return (

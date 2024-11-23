@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import * as apiClient from "../../api-client";
 import emailjs from '@emailjs/browser'; 
 import { useAppContext } from "../../contexts/AppContext";
+import { HotelType, PaymentIntentResponse, UserType } from "../../../../backend/src/shared/types";
+import { StripeCardElement } from "@stripe/stripe-js";
 type Props = {
   currentUser: UserType;
   paymentIntent: PaymentIntentResponse;
@@ -34,7 +36,8 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
   
 
   interface ManagerData {
-    email: string; 
+    managerEmail: string | PromiseLike<string | null> | null;
+     
 }
 const fetchHotelDetails = async (hotelId: string): Promise<HotelType | null> => {
   try {

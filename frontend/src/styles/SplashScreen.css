@@ -33,7 +33,7 @@
     margin: 10px;
     color: beige;
     animation: animate 1s infinite alternate;
-    -webkit-perspective: 300px;
+ 
 }
 
 @keyframes animate {

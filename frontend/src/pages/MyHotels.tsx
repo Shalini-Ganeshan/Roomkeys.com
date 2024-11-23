@@ -5,7 +5,7 @@ import { BsBuilding, BsMap } from "react-icons/bs";
 import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 const MyHotels = () => {
-  const navigate=useNavigate();
+
   const { data: hotelData } = useQuery(
     "fetchMyHotels",
     apiClient.fetchMyHotels,

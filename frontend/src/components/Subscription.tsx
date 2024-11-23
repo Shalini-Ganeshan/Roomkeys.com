@@ -22,15 +22,13 @@ const Subscription = () => {
     if (form.current) {
       try {
        
-        const response = await fetch('http://localhost:7000/subscribe', {
+        const response = await fetch('https://roomkeys-backend.onrender.com/subscribe', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ email }), 
         });
-
-        const data = await response.json();
 
         if (response.ok) {
           
@@ -50,10 +48,14 @@ const Subscription = () => {
         
           showToast({ message: "Invalid Email", type: "ERROR" });
         }
-      } catch (error) {
-        console.error('Error:', error);
-        showToast({ message: error.message, type: "ERROR" });
-      }
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          console.error('Error:', error.message);
+          showToast({ message: error.message, type: "ERROR" });
+        } else {
+          console.error('Unexpected error:', error);
+          showToast({ message: "An unexpected error occurred.", type: "ERROR" });
+        }}
     }
   };
 

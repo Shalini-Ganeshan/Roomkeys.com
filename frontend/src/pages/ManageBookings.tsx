@@ -5,6 +5,9 @@ import * as apiClient from "../api-client";
 
 const ManageBookings = () => {
   const { id } = useParams(); 
+  if (!id) {
+    return <span>No hotel ID found. Please check the URL.</span>;
+  }
   const { data: hotelData, isLoading } = useQuery(["fetchHotel", id], () =>
     apiClient.fetchHotelById(id) 
   );

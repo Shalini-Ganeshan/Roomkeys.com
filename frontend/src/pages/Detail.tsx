@@ -5,24 +5,26 @@ import { AiFillStar } from "react-icons/ai";
 import GuestInfoForm from "../forms/GuestInfoForm/GuestInfoForm";
 import Share from '../components/Share';
 import Reviews from "../components/Reviews";
-
 const Detail = () => {
-  const { hotelId } = useParams();
+  const { hotelId } = useParams<{ hotelId: string }>();
+  if (!hotelId) {
+    return <div>Hotel ID is missing</div>; 
+  }
 
   const { data: hotel } = useQuery(
     "fetchHotelById",
-    () => apiClient.fetchHotelById(hotelId || ""),
+    () => apiClient.fetchHotelById(hotelId), 
     {
-      enabled: !!hotelId,
+      enabled: !!hotelId,  
     }
   );
 
   if (!hotel) {
-    return <></>;
+    return <div>Loading...</div>;
   }
 
   return (
-    <div className="space-y-6 px-4 sm:px-6 lg:px-8"> 
+    <div className="space-y-6 px-4 sm:px-6 lg:px-8">
       <div>
         <Share 
           description={"Check out RoomKeys - The Best Hotel Booking App! I just came across this wonderful hotel"} 
@@ -34,14 +36,14 @@ const Detail = () => {
             <AiFillStar key={index} className="fill-yellow-400" />
           ))}
         </span>
-        <h1 className="lg:text-2xl  font-semibold"> 
+        <h1 className="lg:text-2xl font-semibold"> 
           {hotel.name}
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"> 
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {hotel.imageUrls.map((image, index) => (
-          <div key={index} className="h-[200px] sm:h-[300px]"> 
+          <div key={index} className="h-[200px] sm:h-[300px]">
             <img
               src={image}
               alt={hotel.name}
@@ -53,7 +55,7 @@ const Detail = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
         {hotel.facilities.map((facility, index) => (
-          <div key={index} className="border-2 border-yellow-400 text-center rounded-sm p-2 sm:p-3"> 
+          <div key={index} className="border-2 border-yellow-400 text-center rounded-sm p-2 sm:p-3">
             {facility}
           </div>
         ))}
@@ -78,7 +80,7 @@ const Detail = () => {
         <p className="text-sm sm:text-base">
           Phone Number: <span>{hotel.managerContact}</span>
         </p>
-        <p className="text-sm sm:text-base"> 
+        <p className="text-sm sm:text-base">
           Email: <a href={`mailto:${hotel.managerEmail}`} className="text-blue-500 underline">{hotel.managerEmail}</a>
         </p>
       </div>

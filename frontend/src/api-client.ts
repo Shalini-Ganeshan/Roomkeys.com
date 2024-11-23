@@ -48,7 +48,7 @@ export const register = async (formData: RegisterFormData) => {
     body: JSON.stringify(formData),
   });
 
-  const responseBody = await response.json();
+
 
   if (!response.ok) {
     // throw new Error(responseBody.message);
@@ -240,9 +240,6 @@ export const fetchHotelById = async (hotelId: string): Promise<HotelType> => {
   return response.json();
 };
 
-interface CancelBookingResponse {
-  message: string;
-}
 
 
 export const cancelBooking = async (bookingId: string): Promise<{ message: string }> => {

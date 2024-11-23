@@ -1,11 +1,13 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import * as apiClient from "../api-client";
-import emailjs from '@emailjs/browser'; 
+import emailjs from '@emailjs/browser';
+import { HotelType, BookingType } from "../../../backend/src/shared/types";
 
 const MyBookings = () => {
   const queryClient = useQueryClient();
 
-  const { data: hotels, isLoading, isError } = useQuery(
+  
+  const { data: hotels, isLoading, isError } = useQuery<HotelType[]>(
     "fetchMyBookings",
     apiClient.fetchMyBookings
   );
@@ -14,12 +16,8 @@ const MyBookings = () => {
     onSuccess: () => {
       queryClient.invalidateQueries("fetchMyBookings");
     },
-    onError: (error) => {
-      // console.error("Error cancelling booking:", error);
-    },
   });
-
-  const sendCancellationEmail = async (booking, hotel) => {
+  const sendCancellationEmail = async (booking: BookingType, hotel: HotelType) => {
     const emailData = {
       hotel_name: hotel.name,
       guest_name: `${booking.firstName} ${booking.lastName}`,
@@ -28,15 +26,15 @@ const MyBookings = () => {
       checkout_date: new Date(booking.checkOut).toDateString(),
       adult_count: booking.adultCount,
       children_count: booking.childCount,
-      hotel_id: hotel.id,
+      hotel_id: hotel._id,
     };
 
     try {
       await emailjs.send(
-        'service_w53efrh',           
-        'template_jssoga7',   
-        emailData,                   
-        'WvngVHM6xirSORI50'       
+        'service_w53efrh',
+        'template_jssoga7',
+        emailData,
+        'WvngVHM6xirSORI50'
       );
       // console.log("Cancellation email sent successfully!");
     } catch (error) {
@@ -44,20 +42,21 @@ const MyBookings = () => {
     }
   };
 
-  const handleCancelBooking = (booking, hotel) => {
+  
+  const handleCancelBooking = (booking: BookingType, hotel: HotelType) => {
     mutation.mutate(booking._id, {
       onSuccess: () => {
-        sendCancellationEmail(booking, hotel); 
+        sendCancellationEmail(booking, hotel);
       },
     });
   };
 
   if (isLoading) {
-    return <span>Loading...</span>; 
+    return <span>Loading...</span>;
   }
 
   if (isError) {
-    return <span>Error fetching bookings, Please try again later.</span>; 
+    return <span>Error fetching bookings, Please try again later.</span>;
   }
 
   if (!hotels || hotels.length === 0) {
@@ -69,7 +68,7 @@ const MyBookings = () => {
       <h1 className="text-2xl sm:text-3xl font-semibold">My Bookings</h1>
       {hotels.map((hotel) => (
         <div
-          key={hotel.id}
+          key={hotel._id}
           className="grid grid-cols-1 lg:grid-cols-[1fr_3fr] border border-yellow-300 rounded-lg p-5 sm:p-8 gap-4 sm:gap-5"
         >
           <div className="w-full h-[200px] sm:h-[250px]">
@@ -80,7 +79,7 @@ const MyBookings = () => {
             />
           </div>
 
-          <div className="flex flex-col max-h-[400px] overflow-hidden ">
+          <div className="flex flex-col max-h-[400px] overflow-hidden">
             <div className="text-xl sm:text-2xl font-bold text-center mb-3">
               {hotel.name}
               <div className="text-sm font-normal">
@@ -88,9 +87,8 @@ const MyBookings = () => {
               </div>
             </div>
 
-            {/* Scrollable bookings section */}
             <div className="flex-grow overflow-y-auto max-h-[300px] text-center">
-              {hotel.bookings.map((booking) => (
+              {hotel.bookings.map((booking: BookingType) => (
                 <div key={booking._id} className="space-y-2">
                   <div>
                     <span className="font-bold mr-2">Dates:</span>
@@ -111,8 +109,8 @@ const MyBookings = () => {
                     onClick={() => handleCancelBooking(booking, hotel)}
                     className={`mt-2 ${
                       booking.status === "Cancelled"
-                        ? "bg-red-300  text-red-600 cursor-not-allowed"
-                        : "bg-red-500 text-white "
+                        ? "bg-red-300 text-red-600 cursor-not-allowed"
+                        : "bg-red-500 text-white"
                     } px-2 py-1 rounded w-full sm:w-auto text-sm `}
                     disabled={booking.status === "Cancelled"}
                   >
@@ -120,8 +118,6 @@ const MyBookings = () => {
                       ? "Booking Cancelled"
                       : "Cancel Booking"}
                   </button>
-               
-                  
                 </div>
               ))}
             </div>

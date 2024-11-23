@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
   .catch((err) => {
     console.error("Error connecting to MongoDB:", err);
   });
-
+const port=process.env.PORT || 7000;
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
@@ -58,6 +58,6 @@ app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 });
 
-app.listen(7000, () => {
+app.listen(port, () => {
   // console.log("server running on localhost:7000");
 });

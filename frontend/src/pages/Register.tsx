@@ -28,7 +28,7 @@ const Register = () => {
   } = useForm<RegisterFormData>();
 
   const mutation = useMutation(apiClient.register, {
-    onSuccess: async (data) => {
+    onSuccess: async () => {
 
       await queryClient.invalidateQueries("validateToken");
       

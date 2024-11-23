@@ -21,7 +21,7 @@ const Unsubscribe = () => {
         body: JSON.stringify({ email: currentUser.email }),
       });
 
-      const data = await response.json();
+      
 
       if (response.ok) {
         await emailjs.send(
@@ -40,7 +40,7 @@ const Unsubscribe = () => {
         showToast({ message: "Failed to Unsubscribe", type: "ERROR" });
       }
     } catch (error) {
-      showToast({ message: error, type: "ERROR" });
+    
 
       if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
         showToast({ message: 'Network error: Unable to reach the server. Please try again later.', type: "ERROR" });

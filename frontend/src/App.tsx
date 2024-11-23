@@ -25,7 +25,7 @@ import ManageBookings from "./pages/ManageBookings";
 import TermsOfService from "./pages/TermsOfService";
 import Privacy from "./pages/Privacy";
 
-const { theme, style } = buildTheme({
+const {  style } = buildTheme({
   themeName: "prism",
   themeColor: "#634433",
 });
@@ -86,7 +86,7 @@ const App = () => {
         <style>{style}</style>
         <WebchatProvider
           key={JSON.stringify(config)}
-          theme={theme}
+         
           configuration={config}
           client={client}
         >
@@ -119,7 +119,9 @@ const App = () => {
                   zIndex: 1001,
                 }}
               >
-                <Webchat style={{ width: "100%", height: "100%" }} />
+              <div style={{ width: "100%", height: "100%" }}>
+          <Webchat />
+        </div>
               </div>
             </>
           )}

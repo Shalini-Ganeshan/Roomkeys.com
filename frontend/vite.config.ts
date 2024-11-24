@@ -7,5 +7,6 @@ export default defineConfig({
   base: '/', // Specify the base URL for the app (use a subpath if deploying to a subdirectory)
   build: {
     outDir: 'dist', // Specify the output folder for build
+     target: 'esnext'
   },
 });

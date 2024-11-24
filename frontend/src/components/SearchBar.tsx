@@ -55,9 +55,11 @@ const SearchBar = () => {
       onSubmit={handleSubmit}
       className="p-4 bg-yellow-400 md:-mt-8 rounded shadow-md flex flex-col gap-4"
     >
-      <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-4">
+      {/* Main Input Row */}
+      <div className="flex flex-wrap gap-4 items-center">
+        
         {/* Destination Input */}
-        <div className="flex-1">
+        <div className="flex-2">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input
@@ -109,9 +111,7 @@ const SearchBar = () => {
             />
           </div>
         </div>
-      </div>
 
-      <div className="flex flex-col lg:flex-row gap-2 justify-center">
         {/* Adults Input */}
         <div className="flex-1">
           <input
@@ -135,6 +135,7 @@ const SearchBar = () => {
         </div>
       </div>
 
+      {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-2 justify-center">
         <button className="w-full sm:w-auto lg:w-1/5 bg-indigo-800 border-2 shadow-xl border-indigo-900 text-white py-2 rounded-xl text-md hover:bg-indigo-700">
           Search

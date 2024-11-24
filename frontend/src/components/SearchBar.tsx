@@ -77,9 +77,31 @@ const SearchBar = () => {
             </button>
           </div>
         </div>
-
-        {/* Check-in Date */}
+        {/* Adults Input */}
         <div className="flex-1">
+          Adult:
+          <input
+            type="text"
+            value={adultCount}
+            onChange={handleAdultChange}
+            placeholder="Adults"
+            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+          />
+        </div>
+
+        {/* Children Input */}
+        <div className="flex-1">
+          Children: 
+          <input
+            type="text"
+            value={childCount}
+            onChange={handleChildChange}
+            placeholder="Children"
+            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+          />
+        </div>
+      </div>
+             <div className="flex-1">
           <div className="border-2 border-indigo-800 shadow-xl rounded-xl bg-white w-full">
             <DatePicker
               selected={checkIn}
@@ -111,29 +133,6 @@ const SearchBar = () => {
             />
           </div>
         </div>
-
-        {/* Adults Input */}
-        <div className="flex-1">
-          <input
-            type="text"
-            value={adultCount}
-            onChange={handleAdultChange}
-            placeholder="Adults"
-            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
-          />
-        </div>
-
-        {/* Children Input */}
-        <div className="flex-1">
-          <input
-            type="text"
-            value={childCount}
-            onChange={handleChildChange}
-            placeholder="Children"
-            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
-          />
-        </div>
-      </div>
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-2 justify-center">

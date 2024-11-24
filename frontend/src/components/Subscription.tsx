@@ -64,7 +64,7 @@ const Subscription = () => {
     <div className="absolute inset-0 bg-white bg-opacity-50 z-0"></div>
     <div className="relative z-10  ">
       <h3 className="text-black font-semibold  md:text-2xl">Subscribe for exclusive offers and updates!</h3>
-      <form ref={form} onSubmit={sendEmailAndSave} className="lg:my-2 mx-auto max-w-2xl lg:h-20  h-12 flex items-center bg-white bg-opacity-75 shadow-lg rounded-full overflow-hidden">
+      <form ref={form} onSubmit={sendEmailAndSave} className="lg:my-2 mx-auto max-w-1xl lg:h-18  h-11 flex items-center bg-white bg-opacity-75 shadow-lg rounded-full overflow-hidden">
         <input
           type="hidden"
           name="user_name"

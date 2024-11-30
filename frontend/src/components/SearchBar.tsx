@@ -56,10 +56,10 @@ const SearchBar = () => {
       className="p-4 bg-yellow-400 md:-mt-8 rounded shadow-md flex flex-col gap-4"
     >
       {/* Main Input Row */}
-      <div className="flex flex-wrap gap-4 items-center justify-between">
+      <div className="flex flex-wrap gap-4 items-center justify-between md:flex-row flex-col">
         
         {/* Destination Input */}
-        <div className="flex-2 min-w-[180px]">
+        <div className="flex-2 min-w-[320px] md:min-w-[350px] w-full">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input
@@ -86,7 +86,7 @@ const SearchBar = () => {
             value={adultCount}
             onChange={handleAdultChange}
             placeholder="Adults"
-            className=""
+            className="w-full"
           />
         </div>
 
@@ -98,7 +98,7 @@ const SearchBar = () => {
             value={childCount}
             onChange={handleChildChange}
             placeholder="Children"
-            className=""
+            className="w-full"
           />
         </div>
 

@@ -19,7 +19,9 @@ const Layout = ({ children }: Props) => {
       >
         <Header />
 
-        <Hero />
+     <div className="hidden md:block">
+          <Hero />
+        </div>
       </div>
 
       <div className="container mx-auto px-4 md:px-8 sm:px-12 max-w-7xl"> {/* Adjust max-w to control width */}

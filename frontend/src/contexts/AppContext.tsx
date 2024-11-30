@@ -37,13 +37,20 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
     enabled: !isLoading && !isError, // Only fetch user data if the token validation succeeds
   });
 
+  // Log to see what's happening during each render
+  console.log("isLoading:", isLoading, "isError:", isError, "userData:", userData);
+
   useEffect(() => {
     if (userData) {
       setCurrentUser(userData);
     }
   }, [userData]);
 
-  const isLoggedIn = !isLoading && !isError && currentUser !== undefined; // Only logged in if data is successfully fetched
+  // Set isLoggedIn only if loading has completed and there is no error
+  const isLoggedIn = !isLoading && !isError && currentUser !== undefined;
+
+  // Log isLoggedIn value to debug
+  console.log("isLoggedIn:", isLoggedIn);
 
   return (
     <AppContext.Provider

@@ -71,7 +71,7 @@ const Subscription = () => {
     <form
       ref={form}
       onSubmit={sendEmailAndSave}
-      className="lg:my-2 mx-auto flex justify-center items-center bg-white bg-opacity-75 shadow-lg rounded-full overflow-hidden w-full sm:w-96"
+      className="lg:my-4 mx-auto flex justify-center items-center bg-white bg-opacity-75 shadow-lg rounded-full overflow-hidden w-full sm:w-96 sm:px-4"
     >
       <input
         type="hidden"
@@ -89,7 +89,7 @@ const Subscription = () => {
       />
       <button
         type="submit"
-        className="w-32 h-full bg-amber-400 text-lg sm:text-sm font-medium hover:bg-amber-300 rounded-r-full transition"
+        className="w-32 h-full bg-amber-400 text-lg sm:text-xs font-medium hover:bg-amber-300 rounded-r-full transition"
       >
         Subscribe
       </button>

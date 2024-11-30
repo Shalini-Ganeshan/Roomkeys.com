@@ -8,7 +8,7 @@ import useSpeechRecognition from "./useSpeechRecognition";
 
 const SearchBar = () => {
   const navigate = useNavigate();
-  const search = useSearchContext(); 
+  const search = useSearchContext();
 
   const [destination, setDestination] = useState<string>(search.destination);
   const [checkIn, setCheckIn] = useState<Date>(search.checkIn);
@@ -56,10 +56,10 @@ const SearchBar = () => {
       className="p-4 bg-yellow-400 md:-mt-8 rounded shadow-md flex flex-col gap-4"
     >
       {/* Main Input Row */}
-      <div className="flex flex-wrap gap-4 items-center">
+      <div className="flex flex-wrap gap-4 items-center justify-between">
         
         {/* Destination Input */}
-        <div className="flex-2">
+        <div className="flex-1 min-w-[180px]">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input
@@ -77,9 +77,10 @@ const SearchBar = () => {
             </button>
           </div>
         </div>
+
         {/* Adults Input */}
-        <div className="flex-1">
-          Adult:
+        <div className="flex-1 min-w-[100px]">
+          <label>Adult:</label>
           <input
             type="text"
             value={adultCount}
@@ -90,8 +91,8 @@ const SearchBar = () => {
         </div>
 
         {/* Children Input */}
-        <div className="flex-1">
-          Children: 
+        <div className="flex-1 min-w-[100px]">
+          <label>Children:</label>
           <input
             type="text"
             value={childCount}
@@ -100,39 +101,38 @@ const SearchBar = () => {
             className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
           />
         </div>
-      </div>
-             <div className="flex-1">
-          <div className="border-2 border-indigo-800 shadow-xl rounded-xl bg-white w-full">
-            <DatePicker
-              selected={checkIn}
-              onChange={(date) => setCheckIn(date as Date)}
-              selectsStart
-              startDate={checkIn}
-              endDate={checkOut}
-              minDate={minDate}
-              maxDate={maxDate}
-              placeholderText="Check-in"
-              className="w-full bg-white p-2 text-sm text-center focus:outline-none rounded-xl"
-            />
-          </div>
+
+        {/* Check-in Date */}
+        <div className="flex-1 min-w-[160px]">
+          <DatePicker
+            selected={checkIn}
+            onChange={(date) => setCheckIn(date as Date)}
+            selectsStart
+            startDate={checkIn}
+            endDate={checkOut}
+            minDate={minDate}
+            maxDate={maxDate}
+            placeholderText="Check-in"
+            className="w-full bg-white p-2 text-sm text-center focus:outline-none rounded-xl"
+          />
         </div>
 
         {/* Check-out Date */}
-        <div className="flex-1">
-          <div className="border-2 border-indigo-800 shadow-xl rounded-xl bg-white w-full">
-            <DatePicker
-              selected={checkOut}
-              onChange={(date) => setCheckOut(date as Date)}
-              selectsEnd
-              startDate={checkIn}
-              endDate={checkOut}
-              minDate={minDate}
-              maxDate={maxDate}
-              placeholderText="Check-out"
-              className="w-full bg-white p-2 text-sm text-center focus:outline-none rounded-xl"
-            />
-          </div>
+        <div className="flex-1 min-w-[160px]">
+          <DatePicker
+            selected={checkOut}
+            onChange={(date) => setCheckOut(date as Date)}
+            selectsEnd
+            startDate={checkIn}
+            endDate={checkOut}
+            minDate={minDate}
+            maxDate={maxDate}
+            placeholderText="Check-out"
+            className="w-full bg-white p-2 text-sm text-center focus:outline-none rounded-xl"
+          />
         </div>
+
+      </div>
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-2 justify-center">

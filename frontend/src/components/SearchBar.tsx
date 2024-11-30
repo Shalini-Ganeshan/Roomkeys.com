@@ -79,14 +79,14 @@ const SearchBar = () => {
         </div>
 
         {/* Adults Input */}
-        <div className="flex-1 min-w-[100px]">
+        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2">
           <label>Adult:</label>
           <input
             type="text"
             value={adultCount}
             onChange={handleAdultChange}
             placeholder="Adults"
-            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+            className=""
           />
         </div>
 

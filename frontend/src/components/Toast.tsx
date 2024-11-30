@@ -26,7 +26,7 @@ const Toast = ({ message, type, onClose }: ToastProps) => {
   return (
     <div className={styles}>
       <div className="flex items-center justify-between">
-        <span className="text-base md:text-md text-center">{message}</span>
+        <span className="text-xs md:text-sm text-center">{message}</span>
         <button 
           className="ml-4 text-gray-600 text-sm hover:text-gray-800 transition-colors duration-200" 
           onClick={onClose}

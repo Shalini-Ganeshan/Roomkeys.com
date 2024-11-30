@@ -91,7 +91,7 @@ const SearchBar = () => {
         </div>
 
         {/* Children Input */}
-        <div className="flex-1 min-w-[100px]">
+        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2">
           <label>Children:</label>
           <input
             type="text"
@@ -103,7 +103,7 @@ const SearchBar = () => {
         </div>
 
         {/* Check-in Date */}
-        <div className="flex-1 min-w-[160px]">
+        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2">
           <DatePicker
             selected={checkIn}
             onChange={(date) => setCheckIn(date as Date)}
@@ -118,7 +118,7 @@ const SearchBar = () => {
         </div>
 
         {/* Check-out Date */}
-        <div className="flex-1 min-w-[160px]">
+        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2">
           <DatePicker
             selected={checkOut}
             onChange={(date) => setCheckOut(date as Date)}

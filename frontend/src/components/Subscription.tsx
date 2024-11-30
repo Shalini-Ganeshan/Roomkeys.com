@@ -71,7 +71,7 @@ const Subscription = () => {
     <form
       ref={form}
       onSubmit={sendEmailAndSave}
-      className="lg:my-4 mx-auto flex justify-center items-center bg-white bg-opacity-75 shadow-lg rounded-full overflow-hidden w-full sm:w-96 sm:px-4"
+      className="lg:my-4 mx-auto flex justify-center items-center bg-white bg-opacity-75 shadow-lg rounded-full overflow-hidden w-full sm:w-96"
     >
       <input
         type="hidden"
@@ -85,11 +85,11 @@ const Subscription = () => {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full sm:w-64 h-12 md:text-sm px-4 focus:outline-none text-black rounded-l-full"
+        className="w-full sm:w-64 h-12 sm:text-sm md:text-md px-3 focus:outline-none text-black rounded-l-full"
       />
       <button
         type="submit"
-        className="w-32 h-12 bg-amber-400 text-lg sm:text-xs font-medium hover:bg-amber-300 rounded-r-full transition"
+        className="w-35 h-12 bg-amber-400 md:text-md sm:text-xs font-medium hover:bg-amber-300 rounded-r-full transition"
       >
         Subscribe
       </button>

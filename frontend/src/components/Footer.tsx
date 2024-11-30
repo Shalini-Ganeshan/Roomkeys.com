@@ -16,7 +16,7 @@ const Footer = () => {
         className="container mx-auto flex justify-between items-center relative z-10"
         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)' }}
       >
-        <span className="text-lg ml-1 sm:text-sm md:text-xl text-white font-semibold font-playwriteDEGrund tracking-tight">
+        <span className="text-lg ml-1 text-xs md:text-xl text-white font-semibold font-playwriteDEGrund tracking-tight">
           RoomKeys.com
         </span>
         <span className="text-white md:text-sm text-[4px]  mr-0 md:mr-1 sm:ml-1 tracking-tight flex gap-4">

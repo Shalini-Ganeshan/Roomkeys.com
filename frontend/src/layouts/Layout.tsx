@@ -25,7 +25,7 @@ const Layout = ({ children }: Props) => {
 
       </div>
 
-      <div className="container mx-auto  sm:mt-[-4px] px-4 md:px-8 sm:px-12 max-w-7xl"> 
+      <div className="container mx-auto  sm:mt-[-20px]  px-4 md:px-8 sm:px-12 max-w-7xl"> 
         <SearchBar />
       </div>
 

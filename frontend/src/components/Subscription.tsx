@@ -85,11 +85,11 @@ const Subscription = () => {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full sm:w-64 h-full md:text-sm px-4 focus:outline-none text-black rounded-l-full"
+        className="w-full sm:w-64 h-12 md:text-sm px-4 focus:outline-none text-black rounded-l-full"
       />
       <button
         type="submit"
-        className="w-32 h-full bg-amber-400 text-lg sm:text-xs font-medium hover:bg-amber-300 rounded-r-full transition"
+        className="w-32 h-12 bg-amber-400 text-lg sm:text-xs font-medium hover:bg-amber-300 rounded-r-full transition"
       >
         Subscribe
       </button>

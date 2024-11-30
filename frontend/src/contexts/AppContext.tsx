@@ -5,6 +5,7 @@ import { loadStripe, Stripe } from "@stripe/stripe-js";
 import Toast from "../components/Toast";
 import { UserType } from "../../../backend/src/shared/types";
 
+// Stripe public key
 const STRIPE_PUB_KEY = import.meta.env.VITE_STRIPE_PUB_KEY || "";
 
 type ToastMessage = {
@@ -28,11 +29,11 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
   const [currentUser, setCurrentUser] = useState<UserType | undefined>(undefined);
 
   // Query to validate token (check if user is logged in)
-  const { isError, isLoading, data: userData } = useQuery("validateToken", apiClient.validateToken, {
+  const { isError, isLoading } = useQuery("validateToken", apiClient.validateToken, {
     retry: false,
   });
 
-  // Query to fetch user data
+  // Query to fetch user data, only if token validation is successful
   const { data: userDataDetails } = useQuery("fetchCurrentUser", apiClient.fetchCurrentUser, {
     enabled: !isLoading && !isError, // Only fetch user data if the token validation succeeds
   });

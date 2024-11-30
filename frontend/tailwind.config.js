@@ -10,7 +10,7 @@ export default {
         margarine: ['Margarine', 'cursive'],
       },
         fontSize: {
-        '5px': '5px', 
+        'xxx': '3px', 
       },
       container: {
         padding: {

@@ -22,11 +22,11 @@ const Layout = ({ children }: Props) => {
         <Hero />
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 sm:px-12 max-w-7xl"> {/* Adjust max-w to control width */}
+      <div className="container mx-auto sm:mt-4 md:mt-0 px-4 md:px-8 sm:px-12 max-w-7xl"> 
         <SearchBar />
       </div>
 
-      <div className="container mx-auto py-10 px-4 md:px-8 sm:px-5 flex-1 max-w-7xl"> {/* Adjust max-w to control width */}
+      <div className="container mx-auto py-10 px-4 md:px-8 sm:px-5 flex-1 max-w-7xl"> 
         {children}
       </div>
 

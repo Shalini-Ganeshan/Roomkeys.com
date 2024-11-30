@@ -22,36 +22,32 @@ type AppContext = {
 const AppContext = React.createContext<AppContext | undefined>(undefined);
 
 const stripePromise = loadStripe(STRIPE_PUB_KEY);
+
 export const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [toast, setToast] = useState<ToastMessage | undefined>(undefined);
   const [currentUser, setCurrentUser] = useState<UserType | undefined>(undefined);
 
   // Query to validate token (check if user is logged in)
-  const { isError, isLoading } = useQuery("validateToken", apiClient.validateToken, {
+  const { isError, isLoading, data: userData } = useQuery("validateToken", apiClient.validateToken, {
     retry: false,
   });
 
   // Query to fetch user data
-  const { data: userData } = useQuery("fetchCurrentUser", apiClient.fetchCurrentUser, {
+  const { data: userDataDetails } = useQuery("fetchCurrentUser", apiClient.fetchCurrentUser, {
     enabled: !isLoading && !isError, // Only fetch user data if the token validation succeeds
   });
 
-  // Log to see what's happening during each render
-  console.log("isLoading:", isLoading, "isError:", isError, "userData:", userData);
-
+  // Handle user authentication state based on response
   useEffect(() => {
-    if (userData && userData.message !== "unauthorized") {
-      setCurrentUser(userData); // Set user data if user is authorized
+    if (userDataDetails && userDataDetails.message !== "unauthorized") {
+      setCurrentUser(userDataDetails); // Set user data if user is authorized
     } else {
       setCurrentUser(undefined); // Set user data to undefined if unauthorized
     }
-  }, [userData]);
+  }, [userDataDetails]);
 
-  // Determine if the user is logged in based on userData
+  // Determine if the user is logged in based on userData and error state
   const isLoggedIn = !isLoading && !isError && currentUser !== undefined;
-
-  // Log the final value of isLoggedIn to debug
-  console.log("isLoggedIn:", isLoggedIn);
 
   return (
     <AppContext.Provider

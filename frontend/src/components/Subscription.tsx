@@ -64,25 +64,33 @@ const Subscription = () => {
     <div className="absolute inset-0 bg-white bg-opacity-50 z-0"></div>
     <div className="relative z-10  ">
       <h3 className="text-black font-semibold  md:text-2xl">Subscribe for exclusive offers and updates!</h3>
-      <form ref={form} onSubmit={sendEmailAndSave} className="lg:my-2 mx-auto lg:h-18  h-11 flex items-center bg-white bg-opacity-75 shadow-lg rounded-full overflow-hidden">
-        <input
-          type="hidden"
-          name="user_name"
-          value={username}
-        />
-        <input
-          type="email"
-          name="user_email"
-          placeholder="Enter your email here"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-70 h-full md:text-sm  px-4 focus:outline-none text-black"
-        />
-        <button type="submit" className="w-40 h-full bg-amber-400 text-lg  sm:text-sm font-medium hover:bg-amber-300 rounded-r-full transition">
-          Subscribe
-        </button>
-      </form>
+     <form
+  ref={form}
+  onSubmit={sendEmailAndSave}
+  className="lg:my-2 mx-auto lg:h-18 h-11 flex items-center bg-white bg-opacity-75 shadow-lg rounded-full overflow-hidden"
+>
+  <input
+    type="hidden"
+    name="user_name"
+    value={username}
+  />
+  <input
+    type="email"
+    name="user_email"
+    placeholder="Enter your email here"
+    required
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    className="w-full sm:w-64 h-full md:text-sm px-4 focus:outline-none text-black"
+  />
+  <button
+    type="submit"
+    className="w-32 h-full bg-amber-400 text-lg sm:text-sm font-medium hover:bg-amber-300 rounded-r-full transition"
+  >
+    Subscribe
+  </button>
+</form>
+
     
     </div>
   </section>

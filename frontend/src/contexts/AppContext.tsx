@@ -5,7 +5,6 @@ import { loadStripe, Stripe } from "@stripe/stripe-js";
 import Toast from "../components/Toast";
 import { UserType } from "../../../backend/src/shared/types";
 
-// Stripe public key
 const STRIPE_PUB_KEY = import.meta.env.VITE_STRIPE_PUB_KEY || "";
 
 type ToastMessage = {
@@ -33,22 +32,18 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
     retry: false,
   });
 
-  // Query to fetch user data, only if token validation is successful
-  const { data: userDataDetails } = useQuery("fetchCurrentUser", apiClient.fetchCurrentUser, {
+  // Query to fetch user data
+  const { data: userData } = useQuery("fetchCurrentUser", apiClient.fetchCurrentUser, {
     enabled: !isLoading && !isError, // Only fetch user data if the token validation succeeds
   });
 
-  // Handle user authentication state based on response
   useEffect(() => {
-    if (userDataDetails && userDataDetails.message !== "unauthorized") {
-      setCurrentUser(userDataDetails); // Set user data if user is authorized
-    } else {
-      setCurrentUser(undefined); // Set user data to undefined if unauthorized
+    if (userData) {
+      setCurrentUser(userData);
     }
-  }, [userDataDetails]);
+  }, [userData]);
 
-  // Determine if the user is logged in based on userData and error state
-  const isLoggedIn = !isLoading && !isError && currentUser !== undefined;
+  const isLoggedIn = !isLoading && !isError && currentUser !== undefined; // Only logged in if data is successfully fetched
 
   return (
     <AppContext.Provider

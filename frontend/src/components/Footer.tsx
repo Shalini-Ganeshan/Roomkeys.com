@@ -16,10 +16,10 @@ const Footer = () => {
         className="container mx-auto flex justify-between items-center relative z-10"
         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)' }}
       >
-        <span className="text-lg ml-1 sm:text-xl md:text-xl text-white font-semibold font-playwriteDEGrund tracking-tight">
+        <span className="text-lg ml-1 sm:text-sm md:text-xl text-white font-semibold font-playwriteDEGrund tracking-tight">
           RoomKeys.com
         </span>
-        <span className="text-white text-sm sm:text-base mr-1 md:text-sm tracking-tight flex gap-4">
+        <span className="text-white text-sm sm:text-xs mr-1 md:text-sm tracking-tight flex gap-4">
           <Link to="/privacy" className="cursor-pointer">
             Privacy Policy
           </Link>

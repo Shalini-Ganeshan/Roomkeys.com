@@ -19,16 +19,14 @@ const Layout = ({ children }: Props) => {
       >
         <Header />
 
-           <div className="hidden md:block">
-          <Hero />
-        </div>
-
+        <Hero />
       </div>
- <div className="container mx-auto  sm:mt-[-20px]  px-4 md:px-8 sm:px-12 max-w-7xl"> 
+
+      <div className="container mx-auto px-4 md:px-8 sm:px-12 max-w-7xl"> {/* Adjust max-w to control width */}
         <SearchBar />
       </div>
 
-      <div className="container mx-auto py-10 px-4 md:px-8 sm:px-5 flex-1 max-w-7xl"> 
+      <div className="container mx-auto py-10 px-4 md:px-8 sm:px-5 flex-1 max-w-7xl"> {/* Adjust max-w to control width */}
         {children}
       </div>
 

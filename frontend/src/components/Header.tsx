@@ -4,6 +4,7 @@ import SignOutButton from "./SignOutButton";
 
 const Header = () => {
   const { isLoggedIn } = useAppContext();
+  console.log(isLoggedIn);
 
   return (
     <div className="py-6">

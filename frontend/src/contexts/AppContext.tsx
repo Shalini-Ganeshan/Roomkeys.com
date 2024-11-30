@@ -22,7 +22,6 @@ type AppContext = {
 const AppContext = React.createContext<AppContext | undefined>(undefined);
 
 const stripePromise = loadStripe(STRIPE_PUB_KEY);
-
 export const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [toast, setToast] = useState<ToastMessage | undefined>(undefined);
   const [currentUser, setCurrentUser] = useState<UserType | undefined>(undefined);
@@ -41,15 +40,17 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
   console.log("isLoading:", isLoading, "isError:", isError, "userData:", userData);
 
   useEffect(() => {
-    if (userData) {
-      setCurrentUser(userData);
+    if (userData && userData.message !== "unauthorized") {
+      setCurrentUser(userData); // Set user data if user is authorized
+    } else {
+      setCurrentUser(undefined); // Set user data to undefined if unauthorized
     }
   }, [userData]);
 
-  // Set isLoggedIn only if loading has completed and there is no error
+  // Determine if the user is logged in based on userData
   const isLoggedIn = !isLoading && !isError && currentUser !== undefined;
 
-  // Log isLoggedIn value to debug
+  // Log the final value of isLoggedIn to debug
   console.log("isLoggedIn:", isLoggedIn);
 
   return (

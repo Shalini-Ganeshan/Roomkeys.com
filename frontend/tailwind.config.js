@@ -9,6 +9,9 @@ export default {
         playwriteESDeco: ['Playwrite ES Deco', 'sans-serif'],
         margarine: ['Margarine', 'cursive'],
       },
+        fontSize: {
+        '5px': '5px', 
+      },
       container: {
         padding: {
           md: "10rem",

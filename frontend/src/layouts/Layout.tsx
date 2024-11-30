@@ -19,7 +19,10 @@ const Layout = ({ children }: Props) => {
       >
         <Header />
 
-        <Hero />
+           <div className="hidden md:block">
+          <Hero />
+        </div>
+
       </div>
 
       <div className="container mx-auto sm:mt-24 md:mt-0 px-4 md:px-8 sm:px-12 max-w-7xl"> 

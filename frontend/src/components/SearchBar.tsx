@@ -79,7 +79,7 @@ const SearchBar = () => {
         </div>
 
         {/* Adults Input */}
-        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2">
+        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2 flex flex-row">
           <label>Adult:</label>
           <input
             type="text"
@@ -91,7 +91,7 @@ const SearchBar = () => {
         </div>
 
         {/* Children Input */}
-        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2">
+        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2 flex flex-row">
           <label>Children:</label>
           <input
             type="text"

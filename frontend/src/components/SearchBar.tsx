@@ -56,10 +56,10 @@ const SearchBar = () => {
       className="p-4 bg-yellow-400 md:-mt-8 rounded shadow-md flex flex-col gap-4"
     >
       {/* Main Input Row */}
-      <div className="flex flex-wrap gap-4 items-center justify-between">
+      <div className="flex flex-wrap gap-4 items-center justify-between lg:flex-row sm:flex-col">
         
         {/* Destination Input */}
-        <div className="flex-1 min-w-[180px]">
+        <div className="flex-1 min-w-[180px] lg:flex-[1.5]">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input
@@ -78,28 +78,29 @@ const SearchBar = () => {
           </div>
         </div>
 
-        {/* Adults Input */}
-        <div className="flex-1 min-w-[100px]">
-          <label>Adult:</label>
-          <input
-            type="text"
-            value={adultCount}
-            onChange={handleAdultChange}
-            placeholder="Adults"
-            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
-          />
-        </div>
+        {/* Adults and Children Inputs (in the same row on mobile) */}
+        <div className="flex sm:flex-row flex-col gap-4 w-full lg:w-auto">
+          <div className="flex-1 min-w-[100px]">
+            <label>Adult:</label>
+            <input
+              type="text"
+              value={adultCount}
+              onChange={handleAdultChange}
+              placeholder="Adults"
+              className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+            />
+          </div>
 
-        {/* Children Input */}
-        <div className="flex-1 min-w-[100px]">
-          <label>Children:</label>
-          <input
-            type="text"
-            value={childCount}
-            onChange={handleChildChange}
-            placeholder="Children"
-            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
-          />
+          <div className="flex-1 min-w-[100px]">
+            <label>Children:</label>
+            <input
+              type="text"
+              value={childCount}
+              onChange={handleChildChange}
+              placeholder="Children"
+              className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+            />
+          </div>
         </div>
 
         {/* Check-in Date */}

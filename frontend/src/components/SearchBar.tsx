@@ -56,10 +56,10 @@ const SearchBar = () => {
       className="p-4 bg-yellow-400 md:-mt-8 rounded shadow-md flex flex-col gap-4"
     >
       {/* Main Input Row */}
-      <div className="flex flex-wrap gap-4 items-center justify-between md:flex-row flex-col">
+      <div className="flex flex-wrap gap-4 items-center justify-between">
         
         {/* Destination Input */}
-        <div className="flex-1 min-w-[320px] md:min-w-[350px] w-full">
+        <div className="flex-1 min-w-[180px]">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input
@@ -79,31 +79,31 @@ const SearchBar = () => {
         </div>
 
         {/* Adults Input */}
-        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2 flex flex-row">
+        <div className="flex-1 min-w-[100px]">
           <label>Adult:</label>
           <input
             type="text"
             value={adultCount}
             onChange={handleAdultChange}
             placeholder="Adults"
-            className="w-full"
+            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
           />
         </div>
 
         {/* Children Input */}
-        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2 flex flex-row">
+        <div className="flex-1 min-w-[100px]">
           <label>Children:</label>
           <input
             type="text"
             value={childCount}
             onChange={handleChildChange}
             placeholder="Children"
-            className="w-full"
+            className="w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
           />
         </div>
 
         {/* Check-in Date */}
-        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2">
+        <div className="flex-1 min-w-[160px]">
           <DatePicker
             selected={checkIn}
             onChange={(date) => setCheckIn(date as Date)}
@@ -118,7 +118,7 @@ const SearchBar = () => {
         </div>
 
         {/* Check-out Date */}
-        <div className="flex-1 min-w-[100px] w-full bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2">
+        <div className="flex-1 min-w-[160px]">
           <DatePicker
             selected={checkOut}
             onChange={(date) => setCheckOut(date as Date)}

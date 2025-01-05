@@ -59,7 +59,7 @@ const SearchBar = () => {
       <div className="flex flex-wrap gap-4 items-center justify-between lg:flex-row sm:flex-col">
         
         {/* Destination Input */}
-        <div className="flex-3 min-w-[180px] ">
+        <div className="flex-[3] min-w-[180px] ">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input

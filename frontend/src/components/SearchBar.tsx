@@ -78,7 +78,7 @@ const SearchBar = () => {
           </div>
         </div>
 
-        <div className="flex flex-row  w-1/2 lg:w-auto">
+        <div className="flex flex-row  w-full lg:w-auto">
           <div className="flex-[0.5] flex-row space-x-1 min-w-[100px]">
             <label>Adult:</label>
             <input
@@ -86,7 +86,7 @@ const SearchBar = () => {
               value={adultCount}
               onChange={handleAdultChange}
               placeholder="Adults"
-              className="w-1/4 lg:w-1/2 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+              className="sm:w-1/4 lg:w-1/2 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
             />
           </div>
 
@@ -97,7 +97,7 @@ const SearchBar = () => {
               value={childCount}
               onChange={handleChildChange}
               placeholder="Children"
-              className="w-1/4 lg:w-1/2 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+              className="sm:w-1/4 lg:w-1/2 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
             />
           </div>
         </div>

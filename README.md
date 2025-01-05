@@ -1,6 +1,6 @@
 # RoomKeys
 
-Welcome to **RoomKeys**! This is a hotel booking application that allows users to register, login, and book hotels seamlessly. With a variety of features such as chat support, secure login using JWT, hotel management, and more, RoomKeys aims to provide a comprehensive and user-friendly experience for hotel bookings.
+This is a hotel booking application that allows users to register, login, and book hotels seamlessly. With a variety of features such as chat support, secure login using JWT, hotel management, and more, RoomKeys aims to provide a comprehensive and user-friendly experience for hotel bookings.
 
 ## Features
 

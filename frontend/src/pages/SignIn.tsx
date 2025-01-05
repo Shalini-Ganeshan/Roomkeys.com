@@ -86,7 +86,7 @@ const SignIn = () => {
           <span className="text-base sm:text-lg lg:text-sm">
             Not Registered?{" "}
             <Link className="underline text-blue-500 text-base sm:text-lg lg:text-sm" to="/register">
-              Create an account here
+              Create an account
             </Link>
           </span>
 

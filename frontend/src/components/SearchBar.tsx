@@ -59,7 +59,7 @@ const SearchBar = () => {
       <div className="flex flex-wrap gap-4 items-center justify-between lg:flex-row sm:flex-col">
         
         {/* Destination Input */}
-        <div className="flex-1 min-w-[180px] lg:flex-[1.5]">
+        <div className="flex-1 min-w-[180px] lg:flex-1.5">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input
@@ -114,7 +114,7 @@ const SearchBar = () => {
             minDate={minDate}
             maxDate={maxDate}
             placeholderText="Check-in"
-            className="w-full bg-white p-2 text-sm text-center focus:outline-none rounded-xl"
+            className="w-full bg-white p-2 text-sm text-center focus:outline-none border-2 border-indigo-800 shadow-xl rounded-xl"
           />
         </div>
 
@@ -129,7 +129,7 @@ const SearchBar = () => {
             minDate={minDate}
             maxDate={maxDate}
             placeholderText="Check-out"
-            className="w-full bg-white p-2 text-sm text-center focus:outline-none rounded-xl"
+            className="w-full bg-white p-2 text-sm text-center border-2 border-indigo-800 shadow-xl focus:outline-none rounded-xl"
           />
         </div>
 

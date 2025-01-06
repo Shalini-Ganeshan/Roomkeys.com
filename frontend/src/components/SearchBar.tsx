@@ -86,7 +86,7 @@ const SearchBar = () => {
               value={adultCount}
               onChange={handleAdultChange}
               placeholder="Adults"
-              className="w-1/2 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+              className="w-1/3 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
             />
           </div>
 
@@ -97,7 +97,7 @@ const SearchBar = () => {
               value={childCount}
               onChange={handleChildChange}
               placeholder="Children"
-              className="w-1/2 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+              className="w-1/3 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
             />
           </div>
         </div>

@@ -64,7 +64,7 @@ const SearchBar = () => {
             <MdTravelExplore size={20} className="mr-1" />
             <input
               placeholder="Where are you going?"
-              className="text-sm md:text-base w-full focus:outline-none p-1 lg:mr-12 sm:mr-0"
+              className="text-sm md:text-base w-full focus:outline-none p-1 "
               value={destination}
               onChange={(event) => setDestination(event.target.value)}
             />
@@ -78,19 +78,19 @@ const SearchBar = () => {
           </div>
         </div>
 
-        <div className="flex  flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
-<div className="flex-[1] flex-row space-x-1">
+        <div className="flex-1  flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
+<div className="flex-[0.5] flex-row space-x-1">
             <label>Adult:</label>
             <input
               type="text"
               value={adultCount}
               onChange={handleAdultChange}
               placeholder="Adults"
-              className="w-1/3 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
+               className="w-1/3 bg-white border-2 border-indigo-800 shadow-xl rounded-xl text-sm p-2"
             />
           </div>
 
-      <div className="flex-[1] flex-row space-x-1">
+      <div className="flex-[0.5] flex-row space-x-1">
             <label>Children:</label>
             <input
               type="text"

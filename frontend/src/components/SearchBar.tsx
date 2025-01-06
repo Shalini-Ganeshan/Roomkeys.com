@@ -78,7 +78,7 @@ const SearchBar = () => {
           </div>
         </div>
 
-        <div className=" flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
+        <div className="flex flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
 <div className="flex-row space-x-1">
             <label>Adult:</label>
             <input

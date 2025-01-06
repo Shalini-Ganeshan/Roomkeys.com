@@ -59,7 +59,7 @@ const SearchBar = () => {
       <div className="flex flex-wrap gap-4 items-center justify-between lg:flex-row sm:flex-col">
         
         {/* Destination Input */}
-        <div className="flex-[3] min-w-[230px] ">
+        <div className="flex-[2] min-w-[230px] ">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input
@@ -78,8 +78,8 @@ const SearchBar = () => {
           </div>
         </div>
 
-        <div className="flex-1  flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
-<div className="flex-[0.5] flex-row space-x-1">
+        <div className="flex-[2]  flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
+<div className="flex-[1] flex-row space-x-1">
             <label>Adult:</label>
             <input
               type="text"
@@ -90,7 +90,7 @@ const SearchBar = () => {
             />
           </div>
 
-      <div className="flex-[0.5] flex-row space-x-1">
+      <div className="flex-[1] flex-row space-x-1">
             <label>Children:</label>
             <input
               type="text"

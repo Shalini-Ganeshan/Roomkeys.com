@@ -79,7 +79,7 @@ const SearchBar = () => {
         </div>
 
         <div className="flex-[2]  flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
-<div className="flex-[1] flex-row space-x-1">
+<div className="flex-row space-x-1">
             <label>Adult:</label>
             <input
               type="text"
@@ -90,7 +90,7 @@ const SearchBar = () => {
             />
           </div>
 
-      <div className="flex-[1] flex-row space-x-1">
+      <div className="flex-row space-x-1">
             <label>Children:</label>
             <input
               type="text"

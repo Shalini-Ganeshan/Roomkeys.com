@@ -59,12 +59,12 @@ const SearchBar = () => {
       <div className="flex flex-wrap gap-4 items-center justify-between lg:flex-row sm:flex-col">
         
         {/* Destination Input */}
-        <div className="flex-[3] min-w-[180px] ">
+        <div className="flex-[3] min-w-[230px] ">
           <div className="flex items-center border-2 border-indigo-800 shadow-xl rounded-xl bg-white p-1 w-full">
             <MdTravelExplore size={20} className="mr-1" />
             <input
               placeholder="Where are you going?"
-              className="text-sm md:text-base w-full focus:outline-none p-1"
+              className="text-sm md:text-base w-full focus:outline-none p-1 lg:mr-4"
               value={destination}
               onChange={(event) => setDestination(event.target.value)}
             />
@@ -78,7 +78,7 @@ const SearchBar = () => {
           </div>
         </div>
 
-        <div className="flex flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
+        <div className="flex  flex-row sm:gap-2 md:gap-0 lg:gap-0 w-full lg:w-auto">
 <div className="flex-[1] flex-row space-x-1">
             <label>Adult:</label>
             <input
